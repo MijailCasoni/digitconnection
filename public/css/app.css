@@ -1,0 +1,274 @@
+/* Estilos personalizados */
+
+/*Estilos en light mode*/
+* {
+    box-sizing: border-box;
+}
+
+body html {
+    font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/*Estilos en dark mode*/
+body.dark-mode {
+    background-color: #041440 !important;
+    color: #e5e5e5 !important;
+}
+
+body.dark-mode .navbar a {
+    color: #e5e5e5 !important;
+}
+
+/* Barra de navegación */
+.navbar {
+    font-family: "Sintony", sans-serif;
+    color: #2575fc;
+    font-size: 14px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 10px 30px;
+    line-height: 1.5;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.navbar:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+.navbar ul li a {
+    position: relative; /* Necesario para el pseudo-elemento */
+    color: #000 !important; /* Color inicial del texto */
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #150658 !important; /* Permite que el gradiente se muestre */
+    font-size: 15px;
+}
+
+header.dark-mode ul li a {
+    color: #0f0000 !important;
+    font-weight: bold;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+
+
+
+/* Estilo para el contenedor del switcher */
+.theme-switcher {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-left: 45%;
+    gap: 5px; /* Espacio entre el icono y el switch */
+}
+
+/* Oculta el checkbox real */
+#theme-toggle {
+    display: none;
+}
+
+/* Estilo del switch visual */
+.switch-label {
+    display: inline-block;
+    align-items: flex;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Círculo dentro del switch */
+.switch-label:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Cambia el fondo del switch cuando está activo */
+#theme-toggle:checked + .switch-label {
+    background-color: #041440; /* Color oscuro */
+}
+
+/* Mueve el círculo a la derecha cuando está activo */
+#theme-toggle:checked + .switch-label:before {
+    transform: translateX(25px);
+}
+
+/* Estilo opcional para el icono de la luna */
+.theme-switcher span {
+    font-size: 18px; /* Tamaño del icono */
+    color: #ffc107; /* Color del icono (amarillo) */
+}
+
+
+/*Estilos Footer*/
+
+footer .footer-container {
+    text-align: center;
+    width: 100vw;
+    height: auto; /* Ajustamos para que crezca automáticamente */
+    position: relative;
+    line-height: 1.5;
+    padding-top: 3%; /* Reducimos el espacio */
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+body.dark-mode .footer-container {
+    background-color: rgba(0, 0, 1, 0.9) !important;
+    color: #e5e5e5;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.menus-footer {
+    display: flex;
+    justify-content: space-around; /* Espaciado uniforme entre columnas */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en filas */
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho para evitar que los elementos se estiren demasiado */
+    margin-bottom: 2rem;
+}
+
+.menu-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    margin: 0 1rem; /* Espaciado entre columnas */
+    text-align: left;
+}
+
+.menu-footer .titulo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+.acotado p {
+    color: #d3c3e4;
+}
+
+.menu-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-footer ul li {
+    margin: 0.3rem 0;
+}
+
+.menu-footer ul li a {
+    text-decoration: none;
+    color: #7dc0cf; /* Color del enlace */
+    transition: color 0.3s;
+}
+
+.menu-footer ul li a:hover {
+    color: #0e87c9;
+    font-size: medium;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-white {
+    color: white;
+}
+
+.bg-gradient-custom {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(255, 255, 255, 0.5)
+    );
+}
+
+.rounded-custom {
+    border-radius: 10px;
+}
+
+.shadow-custom {
+    box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.w-full {
+    width: 100%;
+}
