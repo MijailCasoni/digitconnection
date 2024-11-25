@@ -8,7 +8,7 @@ class ContactController extends Controller
 {
     public function showContactForm()
     {
-        return view('layout.contactus'); // Cambiar según la ubicación de tu vista
+        return view('layout.contactus');
     }
 
     public function submitContactForm(Request $request)
@@ -22,8 +22,8 @@ class ContactController extends Controller
         // Procesar y enviar el correo
         $data = $request->only('name', 'email', 'message');
 
-        Mail::send('emails.contact', $data, function ($message) use ($data) {
-            $message->to('admin@tudominio.com') // Reemplaza con tu correo de administrador
+        Mail::send('emails.contacto', $data, function ($message) use ($data) {
+            $message->to('mijailcasoni@gmail.com')
                     ->subject('Nuevo mensaje de contacto');
         });
 

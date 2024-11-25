@@ -10,22 +10,22 @@ class PageController extends Controller
 
     public function blog()
     {
-        return view('layout.blog'); // Muestra la vista layout/blog.blade.php
+        return view('layout.blog');
     }
 
 
     public function servicios()
     {
-        return view('layout.servicios'); // Muestra la vista layout/contact.blade.php
+        return view('layout.servicios');
     }
 
     public function about()
     {
-        return view('layout.about'); // Muestra la vista layout/contact.blade.php
+        return view('layout.about');
     }
 
-    public function contact()
+    public function contacto()
     {
-        return view('layout.contactus'); // Muestra la vista layout/contact.blade.php
+        return view('layout.contactus');
     }
 }

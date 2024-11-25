@@ -1,13 +1,13 @@
 @extends('layout.app')
 
 @section('content')
-<div class="container-fluid vh-100">
-  <div class="row h-100">
+<div class="container-fluid ">
+  <div class="row mb-3">
       <!-- Columna del formulario -->
       <div class="col-md-6 d-flex align-items-center mt-5">
 
   
-  <form action="{{ route('contact.submit') }}" method="POST" class="w-75 mx-auto">
+  <form action="{{ route('contact.submit') }}" method="POST" class="w-75 mx-auto mt-4">
     <h2>Contáctanos</h2>
     @csrf
     <div class="form-group mb-3">
@@ -88,9 +88,9 @@
   </form>
     </div>
     <!-- Columna de la imagen -->
-    <div class="col-md-6 d-none d-md-block mt-1">
-      <div class="h-100" style="background: url('/resources/images no-repeat center center; background-size: cover;">
-        <img alt="imagen" href="{{ url('/resources/images/2.jpg')}}"/>
+    <div class="col-md-6 d-none d-md-block mt-5">
+      <div class="h-100 mt-3" >
+        <img alt="imagen de prueba" src="{{asset('./images/4.jpg')}}"/>
       </div>
     </div>
   </div>

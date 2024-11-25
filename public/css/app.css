@@ -1,9 +1,7 @@
 /* Estilos personalizados */
 
 /*Estilos en light mode*/
-* {
-    box-sizing: border-box;
-}
+
 
 body html {
     font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
@@ -14,6 +12,7 @@ body html {
     flex-direction: column;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 /*Estilos en dark mode*/
@@ -59,13 +58,16 @@ body.dark-mode .navbar a {
 
 .navbar ul li a:hover {
     color: #150658 !important; /* Permite que el gradiente se muestre */
-    font-size: 15px;
+    transform: scale(1.1); /* Mejora el rendimiento y evita layout reflow */
 }
+
+
 
 header.dark-mode ul li a {
     color: #0f0000 !important;
     font-weight: bold;
     transition: color 0.3s ease, font-size 0.3s ease;
+    transform: scale(1.1);
 }
 
 
@@ -110,6 +112,7 @@ header.dark-mode ul li a {
     background-color: white;
     border-radius: 50%;
     transition: transform 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Cambia el fondo del switch cuando está activo */
@@ -133,22 +136,27 @@ header.dark-mode ul li a {
 
 footer .footer-container {
     text-align: center;
+    position: relative;
     width: 100vw;
     height: auto; /* Ajustamos para que crezca automáticamente */
     position: relative;
     line-height: 1.5;
-    padding-top: 3%; /* Reducimos el espacio */
+    padding-top: 1%; /* Reducimos el espacio */
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     transition: background 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-top: auto;
+    
 }
 
 body.dark-mode .footer-container {
     background-color: rgba(0, 0, 1, 0.9) !important;
-    color: #e5e5e5;
+    color: #6ba4f9;
+    transform: scale(1.1);
 }
+
+
 
 .footer-container {
     display: flex;
@@ -202,9 +210,13 @@ body.dark-mode .footer-container {
 }
 
 .menu-footer ul li a:hover {
-    color: #0e87c9;
+    background: linear-gradient(to right, #2575fc, #976cc5);
+    -webkit-background-clip: text;
+    color: transparent;
     font-size: medium;
+    transform: scale(1.1);
 }
+
 
 .copyright {
     font-size: 0.8rem;

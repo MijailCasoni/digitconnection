@@ -24,23 +24,21 @@
         <!--Aqui van los estilos para modificar inline-->
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-
-        <style>
-            
-        </style>
+        <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
         
+        <style>
+        </style>
     </head>
-    <body class="font-sans antialiased dark:text-white/50 @yield('body-class')">
+    <body class="font-sans antialiased @yield('body-class')">
         <div class="bg-gray-50 text-black/50 dark:text-white/50">
-           
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#08277a] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-<header>
+         
+          <header>
                 <!-- Navbar -->
-                <nav class="navbar navbar-expand-lg">
+            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#08277a] selection:text-white">
+                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl fixed-top">
+                  <nav class="navbar navbar-expand-lg ">
                     <a class="navbar-brand" href="#">Digit-Connection</a>
-            
+
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -59,7 +57,7 @@
                             <a class="nav-link" href="{{ route('servicios') }}">Servicios</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact') }}">Contacto</a>
+                            <a class="nav-link" href="{{ route('contacto') }}">Contacto</a>
                             </li>
                         </ul>
                         <div class="theme-switcher">
@@ -67,7 +65,7 @@
                             <label for="theme-toggle" class="switch-label">🌙</label>
                         </div>
                     </div>
-                  </nav>
+                </nav>
               
 </header>            
           <!-- Content -->
