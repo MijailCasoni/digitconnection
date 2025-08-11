@@ -1,0 +1,123 @@
+.navbar {
+  font-family: "Sinfony", sans-serif;
+  color: #2575fc;
+  font-size: 14px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 10px 30px;
+  line-height: 1.5;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-justif{
+  width: 1200px !important;
+}
+
+
+.navbar-logo, .logo-footer{
+  width: 7em;
+  height: auto;
+}
+
+
+
+.navbar:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+.navbar ul li a {
+  position: relative; /* Necesario para el pseudo-elemento */
+  color: #7dc0cf !important; /* Color inicial del texto */
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  /*color: #150658 !important; /* Permite que el gradiente se muestre */
+  background: linear-gradient(to right, #2575fc, #976cc5);
+  -webkit-background-clip: text;
+  color: transparent !important;
+  font-size:small;
+  transform: scale(1.1); /* Mejora el rendimiento y evita layout reflow */
+}
+
+
+
+header.dark-mode ul li a {
+  color: #0f0000 !important;
+  font-weight: bold;
+  transition: color 0.3s ease, font-size 0.3s ease;
+  transform: scale(1.1);
+}
+
+body.dark-mode .navbar a {
+  color: #7dc0cf !important;
+}
+
+
+
+/* Estilo para el contenedor del switcher */
+.theme-switcher {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  margin-left: 45%;
+  gap: 5px; /* Espacio entre el icono y el switch */
+}
+
+/* Oculta el checkbox real */
+#theme-toggle {
+  display: none;
+}
+
+/* Estilo del switch visual */
+.switch-label {
+  display: inline-block;
+  align-items: flex;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Círculo dentro del switch */
+.switch-label:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambia el fondo del switch cuando está activo */
+#theme-toggle:checked + .switch-label {
+  background-color: #041440; /* Color oscuro */
+}
+
+/* Mueve el círculo a la derecha cuando está activo */
+#theme-toggle:checked + .switch-label:before {
+  transform: translateX(25px);
+}
+
+/* Estilo opcional para el icono de la luna */
+.theme-switcher span {
+  font-size: 18px; /* Tamaño del icono */
+  color: #ffc107; /* Color del icono (amarillo) */
+}

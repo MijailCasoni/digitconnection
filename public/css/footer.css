@@ -1,0 +1,108 @@
+footer .footer-container {
+  text-align: center;
+  position: relative;
+  width: 100vw;
+  height: auto; /* Ajustamos para que crezca automáticamente */
+  position: relative;
+  line-height: 1.5;
+  padding-top: 1%; /* Reducimos el espacio */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: auto;
+
+  
+}
+
+body.dark-mode .footer-container{
+  background-color: rgba(0, 0, 1, 0.9) !important;
+  color: #6ba4f9;
+  transform: scale(1.1);
+}
+
+
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/*General Menus footer*/
+.menus-footer {
+  display: flex;
+  justify-content: space-around; /* Espaciado uniforme entre columnas */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en filas */
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho para evitar que los elementos se estiren demasiado */
+  margin-bottom: 2rem;
+}
+
+/*section del footer*/
+.menu-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+  margin: 0 1rem; /* Espaciado entre columnas */
+  text-align: left;
+}
+
+/*CSS del contenedor logo*/
+.menu-footer-logo{
+  width: 15em;
+  height: auto;
+  margin: auto 0;
+  padding: 0;
+  position: relative;
+  display: inline-grid;
+  justify-items: start;
+}
+
+/*Dimensión imagen*/
+.logo-footer{
+  width: 100%;
+  height: auto;
+}
+
+.menu-footer .titulo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+menu-footer ul {
+  list-style: none !important;
+  padding: 0;
+}
+
+.menu-footer ul li {
+  margin: 0.3rem 0;
+  list-style-type: none;
+}
+
+.menu-footer ul li a {
+  color: #7dc0cf; /* Color del enlace */
+  transition: color 0.3s;
+}
+
+.menu-footer ul li a:hover {
+  background: linear-gradient(to right, #2575fc, #976cc5);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: medium;
+  transform: scale(1.1);
+}
+
+
+.copyright {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.nav-legal li{
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
