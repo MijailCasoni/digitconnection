@@ -1,11 +1,264 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* Styles from public/css/navbar.css */
+.navbar {
+  font-family: "Sinfony", sans-serif;
+  color: #2575fc;
+  font-size: 14px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 10px 30px;
+  line-height: 1.5;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+.navbar-justif{
+  width: 1200px !important;
+}
+
+.navbar-logo, .logo-footer{
+  width: 7em;
+  height: auto;
+}
+
+.navbar:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+.navbar ul li a { /* Reverted to original selector and black color */
+  position: relative;
+  color: #000000 !important;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.3s ease, font-size 0.3s ease;
+  background-color: yellow !important;
+}
+
+.navbar ul li a:hover {
+  background: linear-gradient(to right, #2575fc, #976cc5);
+  -webkit-background-clip: text;
+  color: transparent !important;
+  font-size:small;
+  transform: scale(1.1);
+}
+
+header.dark-mode ul li a {
+  color: #0f0000 !important;
+  font-weight: bold;
+  transition: color 0.3s ease, font-size 0.3s ease;
+  transform: scale(1.1);
+}
+
+body.dark-mode .navbar a {
+  color: #7dc0cf !important;
+}
+
+/* Estilo para el contenedor del switcher */
+.theme-switcher {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  margin-left: 45%;
+  gap: 5px;
+}
+
+/* Oculta el checkbox real */
+#theme-toggle {
+  display: none;
+}
+
+/* Estilo del switch visual */
+.switch-label {
+  display: inline-block;
+  align-items: flex;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Círculo dentro del switch */
+.switch-label:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambia el fondo del switch cuando está activo */
+#theme-toggle:checked + .switch-label {
+  background-color: #041440;
+}
+
+/* Mueve el círculo a la derecha cuando está activo */
+#theme-toggle:checked + .switch-label:before {
+  transform: translateX(25px);
+}
+
+/* Estilo opcional para el icono de la luna */
+.theme-switcher span {
+  font-size: 18px;
+  color: #ffc107;
+}
+
+/* Styles from resources/css/app copy.css (relevant parts) */
+/* Estilos personalizados */
+
+/*Estilos en light mode*/
+body html {
+    font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container{
+    margin: 5em auto !important;
+}
+
+/*Estilos en dark mode*/
+body.dark-mode {
+    background-color: #041440 !important;
+    color: #e5e5e5 !important;
+}
+
+.acotado p {
+    color: #d3c3e4;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-white {
+    color: white;
+}
+
+.bg-gradient-custom {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(255, 255, 255, 0.5)
+    );
+}
+
+.rounded-custom {
+    border-radius: 10px;
+}
+
+.shadow-custom {
+    box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.mt-6 {
+    margin-top: 4rem;
+}
+
+.mt-5{
+    margin-top: 3.5rem;
+}
+
+.pl-6{
+    padding-left: 6rem;
+}
+.w-full {
+    width: 100%;
+}
+
+col-md-6{
+    width: 40% !important;
+    padding-right: 0 !important;
+}
+
+.banner2{
+    display:inline-block ;
+    justify-items: right;
+    padding-right: 0 !important;
+    width: 10em;
+}
+
+.img_icon{
+    width: 30px; /* Adjusted size */
+    height: auto;
+    display: flex;
+    justify-content:last baseline;
+    padding-right: 0 !important;
+}
+
+/* button flotante whatsapp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-button i {
+    color: white;
+    font-size: 28px;
 }

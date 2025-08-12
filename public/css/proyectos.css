@@ -1,0 +1,8 @@
+.proyectos .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.proyectos .card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}

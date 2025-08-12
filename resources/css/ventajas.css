@@ -1,0 +1,17 @@
+.ventajas-section {
+  animation: fadeIn 1s ease-in;
+}
+
+.ventaja-card {
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ventaja-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ventaja-card i {
+  color: #0d6efd;
+}

@@ -7,50 +7,80 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HostingController;
+use App\Http\Controllers\TemplateController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ServiciosController;
 
+/*
+|--------------------------------------------------------------------------
+| Rutas públicas
+|--------------------------------------------------------------------------
+*/
 
-
-//ruta inicio
-
+// Página de inicio
 Route::get('/', [PageController::class, 'home'])->name('home');
 
-//rutas de páginas
-
+// Páginas informativas
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/servicios', [PageController::class, 'servicios'])->name('servicios');
 Route::get('/contacto', [PageController::class, 'contacto'])->name('contacto');
 
-
-
-//rutas para usuario login
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-//rutas para registro
-Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
-
-//ruta para dashboard
-
-Route::get('/dashboard', function () {
-    return view('users.dashboard');
-})->name('dashboard');
-
-//ruta formulario
+// Formulario de contacto
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
 Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('contact.submit');
 
+/*
+|--------------------------------------------------------------------------
+| Autenticación y registro
+|--------------------------------------------------------------------------
+*/
 
+// Login
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
+// Logout
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-//rutas para edición de usuarios
+// Registro
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
-Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+/*
+|--------------------------------------------------------------------------
+| Rutas protegidas (requieren autenticación)
+|--------------------------------------------------------------------------
+*/
 
-//Ruta para error_page
-Route::fallback(function () { return response()->view('errors.404', [], 404); });
+Route::middleware(['auth'])->group(function () {
+
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Gestión de usuarios
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    // Aquí puedes agregar otras rutas protegidas como:
+    // - Administración de blog
+    // - Proyectos
+    // - Servicios
+    // - Templates
+    // etc.
+});
+
+/*
+|--------------------------------------------------------------------------
+| Página de error 404
+|--------------------------------------------------------------------------
+*/
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});

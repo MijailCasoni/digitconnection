@@ -1,13 +1,26 @@
-@extends('layout.app')
+@extends ('layout.app')
 
-@section('content')
-<div class="container">
-  <h1>Servicios</h1>
-  <p>Información sobre nuestros servicios...</p>
-  <h2>Desarrollo de sistemas web</h2>
-  <h2>Desarrollo de páginas web</h2>
-  <h2>Administración, gestión y mantención de páginas y sistemas web</h2>
-  <h2>Servicio de alojamiento y dominio</h2>
-  <h2>Desarrollo de plantillas</h2>
-</div>
-@endsection
+<section class="servicios-info py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4">Nuestros Servicios</h2>
+    <p class="lead text-muted mb-5">
+      Ofrecemos soluciones digitales completas para potenciar tu presencia online.
+    </p>
+
+    <div class="row g-4">
+      @foreach($servicios as $servicio)
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <div class="mb-3">
+                <i class="{{ $servicio['icono'] }} fs-2 text-primary"></i>
+              </div>
+              <h5 class="card-title">{{ $servicio['titulo'] }}</h5>
+              <p class="card-text text-muted">{{ $servicio['descripcion'] }}</p>
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+  </div>
+</section>

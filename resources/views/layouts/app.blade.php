@@ -1,187 +1,36 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <title>DigitConnection</title>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Optional JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Styles / Scripts -->
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @endif
-    <!--Aqui van los estilos para modificar inline-->
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            @include('layouts.navigation')
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/cards.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/about.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+            <!-- Page Heading -->
+            @isset($header)
+                <header class="bg-white dark:bg-gray-800 shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endisset
 
-    <style>
-    </style>
-</head>
-
-<body class="font-sans bg-[#d5e9fd] antialiased @yield('body-class')">
-    <div class="bg-[#d5e9fd] text-black/50 dark:text-white/50">
-
-        <header>
-            <!-- Navbar -->
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#08277a] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl fixed-top">
-                    <nav class="navbar navbar-expand-lg ">
-                        <img src="{{ asset('img/logo1.png') }}" class="d-block  navbar-logo"
-                            alt="Logo Digit Connection">
-
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse w-10" id="navbarNav">
-                            <ul class="navbar-nav navi">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="{{ route('home') }}">Inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('blog') }}">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('about') }}">Nosotros</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('servicios') }}">Servicios</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('contacto') }}">Contacto</a>
-                                </li>
-                            </ul>
-                            <div class="theme-switcher">
-
-                                <div class="theme-switcher d-flex justify-end">
-                                    <input type="checkbox" id="theme-toggle" />
-                                    <label for="theme-toggle" class="switch-label">🌙</label>
-                                </div>
-                            </div>
-                            <ul class="navbar-nav ml-5"> 
-                              <li class="nav-item dropdown"> 
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                                  <img src="{{ asset('img/avat_1.png') }}" alt="User Icon" class="img_icon"> </a>
-                                  <div class="dropdown-menu dropdown-menu-right bg-indigo-900" aria-labelledby="navbarDropdown"> 
-                                    <a class="dropdown-item" href="{{url("/login")}}">Iniciar Sesión</a>
-                                    <a class="dropdown-item" href="#">Registrarse</a> 
-                                  </div>
-                                </li>
-                            </ul>
-                    </nav>
-                  </div>
-        </header>
-        <!-- Content -->
-        @yield('content')
-
-    </div>
-    </div>
-    </div>
-</body>
-
-<footer class="text-sm footer-general">
-    <div class="footer-container">
-
-        <div class="menus-footer">
-            <div class="menu-footer-logo">
-                <img src="{{ asset('img/logo1.png') }}" alt="Logo" class="logo-footer">
-            </div>
-            <div class="menu-footer">
-                <p class="titulo">Empresa<span class="mas" data-id="0"></span></p>
-                <ul id="ul-menu-footer-0" class="ul-footer">
-                    <li><a href="https://digitconnection.com/contacto/" title="Contacto">Contacto</a></li>
-                    <li><a href="https://digitconnection.com/programa-de-afiliados/"
-                            title="Programa de afiliados">Programa de afiliados</a></li>
-                    <li><a href="https://digitconnection.com/opiniones/" title="Opiniones">Opiniones</a></li>
-                    <li><a href="https://digitconnection.com/working" title="Trabaja con nosotros"
-                            target="_blank">Trabaja con nosotros</a></li>
-                </ul>
-            </div>
-            <div class="menu-footer">
-                <p class="titulo">Producto<span class="mas" data-id="1"></span></p>
-                <ul id="ul-menu-footer-1" class="ul-  footer">
-                    <li><a href="https://digitconnection.com/productos/" title="Productos">Productos</a></li>
-                    <li><a href="https://digitconnection.com/productos/hosting" title="Productos">Servicios de
-                            alojamiento</a></li>
-                    <li><a href="https://digitconnection.com/serviciosplus" title="Nuestros servicios">Nuestros
-                            servicios</a></li>
-                    <li><a href="https://digitconnection.com/tecnologias" title="tecnologias">Que tecnologías aplicamos
-                            a tus proyectos?</a></li>
-                    <li><a href="https://digitconnection.com/blog" title="Novedades">Novedades</a></li>
-                </ul>
-            </div>
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
-
-        <div class="subfooter-general acotado">
-            <div class="copyright">
-                <p>Digit-connection Copyright&copy; Todos los derechos reservados, 2024</p>
-            </div>
-            <div class="menu-legal">
-                <nav role="navigation">
-                    <ul id="menu-legal-es" class="nav-legal nav">
-                        <li id="menu-item-96535"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-96535">
-                            <a rel="privacy-policy" href="https://metricool.com/es/terminos-legales/"
-                                data-megamenu="96535">Términos y Condiciones</a></li>
-                        <li id="menu-item-96288"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96288"><a
-                                href="https://metricool.com/es/politica-privacidad/" data-megamenu="96288">Política de
-                                privacidad</a></li>
-                        <li id="menu-item-96289"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96289"><a
-                                href="https://metricool.com/es/politica-de-cookies/" data-megamenu="96289">Política de
-                                cookies</a></li>
-                        <li id="menu-item-96538"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96538"><a
-                                href="https://metricool.com/es/aviso-legal/" data-megamenu="96538">Aviso Legal</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-</footer>
-
+    </body>
 </html>
-
-<script>
-    // Obtener el switch y el body
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    // Verificar el estado del modo al cargar la página
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
-        themeToggle.checked = true; // Activar el switch
-    }
-
-    // Cambiar entre el modo oscuro y claro
-    themeToggle.addEventListener('change', () => {
-        if (themeToggle.checked) {
-            body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark'); // Guardar la preferencia en el almacenamiento local
-        } else {
-            body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light'); // Guardar la preferencia en el almacenamiento local
-        }
-    });
-</script>
