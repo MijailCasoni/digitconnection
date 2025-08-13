@@ -32,109 +32,141 @@
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet">
-
-    {{-- Bootstrap CSS --}}
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    {{-- Bootstrap Icons --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (asegúrate de que Sinfony también esté cargada aquí o en app.css) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    {{-- Si 'Sinfony' es de Google Fonts, descomenta y añade aquí: --}}
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Sinfony&display=swap" rel="stylesheet"> --}}
+
+
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap Icons (muchos íconos son útiles independientemente del framework CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    {{-- Optional JS --}}
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    {{-- App Styles / Scripts --}}
+    {{-- App Styles / Scripts (Vite para desarrollo, fallback para producción) --}}
+    {{-- ¡Este es el ÚNICO archivo CSS que necesitas enlazar directamente! --}}
+    {{-- Contendrá Tailwind y todos tus @import de recursos/css/ --}}
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @endif
 
-    {{-- Custom Styles --}}
-    <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/cards.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/about.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/intro.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/ventajas.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/hosting.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/plantillas.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/servicios.css') }}" rel="stylesheet">
 
     @stack('styles')
 </head>
 
-<body class="font-sans bg-[#d5e9fd] antialiased @yield('body-class')">
-    <div class="bg-[#d5e9fd] text-black/50 dark:text-white/50">
+{{-- Clases de Tailwind en el body, usando el color de fondo personalizado --}}
+<body class="font-sans bg-light-bg antialiased @yield('body-class')">
+    {{-- Contenedor principal para el modo oscuro y el layout flexbox --}}
+    <div class="text-black/50 dark:text-white/50 min-h-screen flex flex-col">
 
         <header>
             <!-- Navbar -->
-            <div class="relative w-full max-w-5xl px-3 py-6lg:max-w-9xl fixed-top">
+            {{-- Aseguramos que la navbar sea fija, y la colocamos dentro de un div con auto margins para centrarla --}}
+            <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fixed top-0 z-50">
                 @include('partials.navbar')
             </div>
-
+            {{-- Espacio para compensar la navbar fija --}}
+            <div class="pt-16"></div> {{-- Ajusta este padding-top según la altura real de tu navbar --}}
         </header>
+
         <!-- Content -->
-        @yield('content')
+        <main class="flex-grow"> {{-- flex-grow para que el contenido ocupe el espacio disponible --}}
+            @if (session('success'))
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                        <span class="block sm:inline">{{ session('success') }}</span>
+                        <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="this.parentElement.remove()">
+                            <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Cerrar</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.196l-2.651 2.652a1.2 1.2 0 1 1-1.697-1.697l2.651-2.651-2.651-2.651a1.2 1.2 0 0 1 1.697-1.697l2.651 2.651 2.651-2.651a1.2 1.2 0 0 1 1.697 1.697l-2.651 2.651 2.651 2.651z"/></svg>
+                        </span>
+                    </div>
+                </div>
+            @endif
 
+            @if ($errors->any())
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <ul class="list-disc list-inside">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                        <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="this.parentElement.remove()">
+                            <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Cerrar</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.196l-2.651 2.652a1.2 1.2 0 1 1-1.697-1.697l2.651-2.651-2.651-2.651a1.2 1.2 0 0 1 1.697-1.697l2.651 2.651 2.651-2.651a1.2 1.2 0 0 1 1.697 1.697l-2.651 2.651 2.651 2.651z"/></svg>
+                        </span>
+                    </div>
+                </div>
+            @endif
+
+            @yield('content')
+        </main>
+
+        <footer class="py-16 text-center text-sm text-black dark:text-white/70">
+            @include('partials.footer')
+        </footer>
+
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/56932691146?text=Hola%20me%20interesa%20saber%20mas%20sobre%20un%20producto¡¡" id="whatsapp-icon" class="whatsapp-button fixed bottom-12 right-5 z-50 bg-whatsapp-green text-white rounded-full w-16 h-16 flex items-center justify-center shadow-whatsapp-custom hover:scale-110 transition-transform duration-300 ease-in-out" target="_blank">
+            <i class="bi bi-whatsapp text-3xl"></i>
+        </a>
     </div>
-    </div>
 
-    </div>
+    {{-- Tus scripts personalizados aquí o en app.js --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener el switch y el body
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
 
+            // Verificar el estado del modo al cargar la página y aplicar si existe themeToggle
+            if (themeToggle && localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggle.checked = true; // Activar el switch
+            }
 
-    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-        @include('partials.footer')
-    </footer>
-    <a href="https://wa.me/56932691146?text=Hola%20me%20interesa%20saber%20mas%20sobre%20un%20producto¡¡" class="whatsapp-button" target="_blank">
-        <i class="bi bi-whatsapp"></i>
-    </a>
-</body>
+            // Cambiar entre el modo oscuro y claro
+            if (themeToggle) { // Ensure themeToggle exists before adding listener
+                themeToggle.addEventListener('change', () => {
+                    if (themeToggle.checked) {
+                        body.classList.add('dark-mode');
+                        localStorage.setItem('theme', 'dark'); // Guardar la preferencia en el almacenamiento local
+                    } else {
+                        body.classList.remove('dark-mode');
+                        localStorage.setItem('theme', 'light'); // Guardar la preferencia en el almacenamiento local
+                    }
+                });
+            }
 
+            // WhatsApp icon click
+            const whatsappButton = document.getElementById('whatsapp-icon'); // Get the element by its ID
+            if (whatsappButton) { // Check if the element exists
+                whatsappButton.addEventListener('click', () => {
+                    fetch('/api/track-whatsapp-interaction', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({
+                            event_type: 'click',
+                            phone_number: '56950148342'
+                        })
+                    });
+                });
+            }
 
-
-</html>
-
-<script>
-    // Obtener el switch y el body
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    // Verificar el estado del modo al cargar la página
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
-        themeToggle.checked = true; // Activar el switch
-    }
-
-    // Cambiar entre el modo oscuro y claro
-    themeToggle.addEventListener('change', () => {
-        if (themeToggle.checked) {
-            body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark'); // Guardar la preferencia en el almacenamiento local
-        } else {
-            body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light'); // Guardar la preferencia en el almacenamiento local
-        }
-    });
-
-    // WhatsApp icon click
-    document.getElementById('whatsapp-icon')?.addEventListener('click', () => {
-        fetch('/api/track-whatsapp-interaction', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            body: JSON.stringify({
-                event_type: 'click',
-                phone_number: '56950148342'
-            })
+            // Script para cerrar alertas (usando onclick directo en el span, también funciona)
+            // Ya no es necesario el querySelectorAll si usas onclick directamente.
+            // Para mantener la consistencia con JS, podrías hacer esto:
+            document.querySelectorAll('[role="alert"] .cursor-pointer').forEach(closeButton => {
+                closeButton.addEventListener('click', function() {
+                    this.closest('[role="alert"]').remove();
+                });
+            });
         });
-    });
-</script>
+    </script>
+
+    @stack('scripts') {{-- Para scripts específicos de cada vista --}}
+</body>
+</html>

@@ -1,5 +1,7 @@
 @extends ('layout.app')
 
+@include('layouts.hero-servicios')  
+
 <section class="servicios-info py-5 bg-light">
   <div class="container text-center">
     <h2 class="mb-4">Nuestros Servicios</h2>
