@@ -13,7 +13,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ServiciosController;
-
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Rutas públicas
@@ -40,7 +40,7 @@ Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('
 */
 
 // Login
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
+/*Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 // Logout
@@ -56,13 +56,14 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['auth'])->group(function () {
+/*Route::middleware(['auth'])->group(function () {
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Gestión de usuarios
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');

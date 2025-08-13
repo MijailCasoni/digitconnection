@@ -1,7 +1,12 @@
-public function index()
-{
-    $servicios = [
-        [
+
+use App\Http\Controllers\Controller;
+
+class ServiciosController extends Controller
+
+    public function index()
+    {
+        $servicios = [
+            [
             'titulo' => 'Desarrollo de sistemas web',
             'descripcion' => 'Creamos sistemas robustos, escalables y personalizados para automatizar procesos y mejorar tu operación digital.',
             'icono' => 'bi bi-window',
@@ -28,5 +33,5 @@ public function index()
         ],
     ];
 
-    return view('servicios', compact('servicios'));
+    return view('layouts.servicios', compact('servicios'));
 }

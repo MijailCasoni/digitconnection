@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app') {{-- Corregido: 'layout' a 'layouts' --}}
 
 @section('title', 'Inicio')
 
@@ -12,8 +12,4 @@
 @include('partials.form-contact')
 @endsection
 
-@push('styles')
-  <link rel="stylesheet" href="{{ asset('css/inicio.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/intro.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/ventajas.css') }}">
-@endpush
+

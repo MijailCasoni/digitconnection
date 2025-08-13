@@ -5,12 +5,12 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('layout.inicio'); // Cambia a la vista que prefieras
+        return view('layouts.inicio'); // Cambia a la vista que prefieras
     }
 
     public function blog()
     {
-        return view('layout.blog');
+        return view('layouts.blog');
     }
 
 
@@ -44,16 +44,16 @@ class PageController extends Controller
         ],
     ];
 
-    return view('layout.servicios', compact('servicios'));
+    return view('layouts.servicios', compact('servicios'));
 }
 
     public function about()
     {
-        return view('layout.about');
+        return view('layouts.about');
     }
 
     public function contacto()
     {
-        return view('layout.contactus');
+        return view('layouts.contactus');
     }
 }
