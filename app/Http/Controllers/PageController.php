@@ -56,4 +56,6 @@ class PageController extends Controller
     {
         return view('layouts.contactus');
     }
+
+
 }

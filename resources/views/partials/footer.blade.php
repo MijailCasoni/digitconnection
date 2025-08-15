@@ -1,18 +1,14 @@
-{{--
-    Este parcial del footer ha sido refactorizado para usar EXCLUSIVAMENTE CLASES DE TAILWIND CSS
-    y tus clases personalizadas definidas en `resources/css/footer.css`.
-    Se eliminaron todas las clases de Bootstrap.
---}}
-<footer class="footer-general text-sm w-full"> {{-- 'footer-general' de footer.css, 'w-full' de Tailwind --}}
+
+<footer class="footer-general text-sm w-full bg-blue-main"> {{-- 'footer-general' de footer.css, 'w-full' de Tailwind --}}
     <div class="footer-fluid py-5"> {{-- 'footer-fluid' de footer.css (ahora incluye max-w, mx-auto, px-4 de Tailwind) --}}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left justify-items-center md:justify-items-start">
             {{-- Columna 1: Logo + descripción --}}
             <div class="w-full md:col-span-1 mb-4 px-4 flex flex-col items-center md:items-start text-center md:text-left">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('img/logo1.png') }}" alt="Logo Digit Connection" class="logo-footer mb-3">
+                    <img src="{{ asset('storage/images/logo1.png') }}" alt="Logo Digit Connection" class="logo-footer mb-3 w-32 h-32">
                 </a>
                 <p class="text-footer-text-dark leading-relaxed"> {{-- 'text-footer-text-dark' de footer.css --}}
-                    <strong>Digit-Connection</strong> crea soluciones digitales personalizadas para emprendedores, empresas y visionarios. Nos especializamos en sitios web, sistemas empresariales y branding digital.
+                    <strong>DigitConnection</strong> crea soluciones digitales personalizadas para emprendedores, empresas y visionarios. Nos especializamos en sitios web, sistemas empresariales y branding digital.
                 </p>
             </div>
 
@@ -53,16 +49,16 @@
                 <p class="titulo mt-4 text-footer-dark-blue">Síguenos en redes</p>
                 <div class="social-icons flex justify-center md:justify-start space-x-4 mt-4 text-2xl"> {{-- 'social-icons' de footer.css --}}
                     <a href="https://instagram.com/digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-dark-blue">
-                        <i class="bi bi-instagram"></i>
+                        <i class="fab fa-instagram"></i>
                     </a>
                     <a href="https://facebook.com/digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-dark-blue">
-                        <i class="bi bi-facebook"></i>
+                        <i class="fab fa-facebook"></i>
                     </a>
                     <a href="https://tiktok.com/@digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-dark-blue">
-                        <i class="bi bi-tiktok"></i>
+                        <i class="fab fa-tiktok"></i>
                     </a>
                     <a href="https://x.com/digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-dark-blue">
-                        <i class="bi bi-twitter-x"></i>
+                        <i class="fab fa-x-twitter"></i>
                     </a>
                 </div>
             </div>
@@ -71,10 +67,17 @@
         {{-- Subfooter legal --}}
         <div class="border-t border-gray-700/20 pt-3 mt-3 px-4 grid grid-cols-1 md:grid-cols-2 text-footer-text-dark text-sm items-center">
             <div class="text-center md:text-left">
-                <p class="mb-0">Digit-Connection &copy; {{ date('Y') }} Todos los derechos reservados.</p>
+                <p class="mb-0">DigitConnection &copy; {{ date('Y') }} Todos los derechos reservados.</p>
             </div>
             <div class="text-center md:text-right">
                 <nav>
                     <ul class="flex justify-center md:justify-end space-x-4"> {{-- Tailwind para flex y espaciado --}}
                         <li><a class="nav-link text-footer-text-dark hover:text-footer-dark-blue" href="https://metricool.com/es/terminos-legales/">Términos</a></li>
-                        <li><a class="nav-l
+                        <li><a class="nav-link text-footer-text-dark hover:text-footer-dark-blue" href="https://metricool.com/es/terminos-legales/">Política de privacidad</a></li>
+                        <li><a class="nav-link text-footer-text-dark hover:text-footer-dark-blue" href="https://metricool.com/es/terminos-legales/">Cookies</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>

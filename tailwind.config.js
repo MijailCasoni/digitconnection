@@ -27,9 +27,9 @@ export default {
                 'switch-light-bg': '#ccc',
                 'switch-circle': '#ffffff',
                 'switch-icon-yellow': '#ffc107',
-                'gradient-purple-dark': '#6a11cb',
-                'gradient-blue-main': '#2575fc',
-                'gradient-purple-light': '#976cc5',
+                'purple-dark': '#6a11cb',
+                'blue-main': '#2575fc',
+                'purple-light': '#976cc5',
                 'whatsapp-green': '#25D366',
 
                 // Nuevos colores del footer
@@ -45,7 +45,7 @@ export default {
             },
             boxShadow: {
                 'navbar-custom': '0 4px 6px rgba(0, 0, 0, 0.5)',
-                'switch-custom': '0 2px 4px rgba(0, 0, 0, 0.2)',
+                'switch-custom': '0 2px 4px rgba(104, 56, 56, 0.2)',
                 'whatsapp-custom': '0 4px 8px #000000',
             },
         },

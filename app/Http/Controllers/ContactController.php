@@ -8,7 +8,7 @@ class ContactController extends Controller
 {
     public function showContactForm()
     {
-        return view('layout.contactus');
+        return view('layouts.contactus');
     }
 
     public function submitContactForm(Request $request)
@@ -23,7 +23,7 @@ class ContactController extends Controller
         $data = $request->only('name', 'email', 'message');
 
         Mail::send('emails.contacto', $data, function ($message) use ($data) {
-            $message->to('mijailcasoni@gmail.com')
+            $message->to('contacto@digitconnection.com')
                     ->subject('Nuevo mensaje de contacto');
         });
 

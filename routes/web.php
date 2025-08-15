@@ -1,19 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\RegisterController;
+
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\HostingController;
-use App\Http\Controllers\TemplateController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ServiciosController;
-use App\Http\Controllers\ProfileController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Rutas públicas
@@ -39,16 +30,21 @@ Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('
 |--------------------------------------------------------------------------
 */
 
-// Login
-/*Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+// ¡DESCOMENTADO!: Esta línea registra todas las rutas de autenticación necesarias,
+// incluyendo 'password.request', 'password.email', etc.
+Auth::routes(['login' => false, 'register' => false, 'logout' => false, 'reset' => true, 'verify' => false]);
 
-// Logout
+// Tu ruta personalizada para mostrar el formulario de login (GET)
+// Apuntamos a AuthController@showLoginForm para mantener la lógica de auth en un solo lugar.
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+
+// La ruta POST para procesar el login
+// Asegúrate de que el método en AuthController sea 'login', no 'authenticate'
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+
+// Ruta para cerrar sesión
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Registro
-Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 
 /*
 |--------------------------------------------------------------------------

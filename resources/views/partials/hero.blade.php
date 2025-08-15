@@ -1,7 +1,6 @@
 
 <!-- Carrusel de imágenes como fondo -->
 
-<body>
     <div id="carouselExampleDark" class="carousel carousel-dark slide @yield('body-class')">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000"><img src="{{asset('./img/banner1.jpg')}}" class="d-block w-100" alt="">
