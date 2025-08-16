@@ -1,10 +1,10 @@
 <nav class="bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 dark:bg-gray-800 shadow-md py-4 px-6 md:py-6 md:px-8 md:flex md:justify-between md:items-center">
     <div class="flex items-center justify-between">
         <!-- Logo de la Empresa -->
-        <a href="{{ route('home') }}" class="flex items-center space-x-2">
+        <a href="{{ route('home') }}" class="flex items-center text-white space-x-2">
             <!-- Asegúrate de reemplazar 'images/your-logo.png' con la ruta correcta de tu logo -->
             <img src="{{ asset('storage/images/logo1.png') }}" alt="Logo de la Empresa" class="h-20 w-auto">
-            <span class="text-3xl font-logo text-gray-900 dark:text-white ">DigitConnection</span>
+            <span class="text-xl font-cairo text-white-900 dark:text-white ">DigitConnection</span>
         </a>
         <!-- Botón de Hamburguesa para Móviles (si lo necesitas, lo puedes añadir aquí) -->
         <button id="navbar-toggle" class="md:hidden text-gray-500 dark:text-gray-400 focus:outline-none focus:text-gray-700 dark:focus:text-gray-200">

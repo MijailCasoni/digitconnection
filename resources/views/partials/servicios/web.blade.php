@@ -2,7 +2,7 @@
   <div class="flex justify-center mb-4 text-indigo-600 text-5xl">
     <i class="bi bi-window"></i>
   </div>
-  <h5 class="text-lg font-semibold mb-2">Landing Page Profesional</h5>
+  <h5 class="text-lg font-semibold text-indigo-700 mb-2">Web Profesional</h5>
   <p class="text-gray-600 leading-relaxed">
     Diseño modular con Blade, responsividad total, animaciones suaves y estructura pensada para convertir visitantes en clientes.
   </p>

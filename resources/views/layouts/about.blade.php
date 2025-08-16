@@ -29,7 +29,7 @@
     <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
       <div class="space-y-6">
         <img src="{{ asset('img/mision.png') }}" alt="Misión" class="w-[165px] h-[145px] mx-auto md:mx-0">
-        <h2 class="text-3xl font-bold text-indigo-700">Nuestra Misión</h2>
+        <h2 class="text-3xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">Nuestra Misión</h2>
         <p class="text-gray-700 leading-relaxed">
           Transformar ideas visionarias en experiencias digitales seguras, innovadoras y de alto impacto que permitan a 
           nuestros clientes alcanzar y superar sus objetivos de negocio, respaldadas por tecnologías líderes como Laravel, React y WordPress.
@@ -37,7 +37,7 @@
       </div>
       <div class="space-y-6">
         <img src="{{ asset('img/vision.png') }}" alt="Visión" class="w-[165px] h-[145px] mx-auto md:mx-0">
-        <h2 class="text-3xl font-bold text-indigo-700">Nuestra Visión</h2>
+        <h2 class="text-3xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">Nuestra Visión</h2>
         <p class="text-gray-700 leading-relaxed">
           No solo ser un referente global en desarrollo web y transformación digital, sino ser tu aliado estratégico, inspirando confianza con prácticas éticas,
           sostenibles y un entorno inclusivo que fomente la innovación constante y el crecimiento de nuestro equipo.
@@ -49,7 +49,7 @@
   {{-- Valores con gradientes de fondo e íconos a todo color --}}
   <section class="py-20 bg-gradient-to-b from-indigo-50 to-white">
     <div class="container mx-auto px-6 text-center">
-      <h3 class="text-4xl font-bold text-indigo-700 mb-12">Nuestros Valores</h3>
+      <h3 class="text-4xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent mb-12">Nuestros Valores</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         @php
           $values = [
@@ -78,11 +78,11 @@
   {{-- Equipo Multidisciplinario con fotos y bloques de color --}}
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
-      <h3 class="text-4xl font-bold text-indigo-700 text-center mb-12">Equipo Multidisciplinario</h3>
+      <h3 class="text-4xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent text-center mb-12">Equipo Multidisciplinario</h3>
 
       {{-- Fundadores --}}
       <div class="mb-16">
-        <h4 class="text-2xl font-semibold text-gray-800 mb-8 uppercase">Fundadores</h4>
+        <h4 class="text-2xl font-semibold text-indigo-800 mb-8 uppercase">Fundadores</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           @php
             $founders = [
@@ -97,7 +97,7 @@
                 <img src="{{ asset("img/{$f['img']}") }}" alt="{{ $f['name'] }}" class="object-cover w-full h-full">
               </div>
               <div>
-                <h5 class="text-2xl font-semibold text-gray-800">{{ $f['name'] }}</h5>
+                <h5 class="text-2xl font-semibold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">{{ $f['name'] }}</h5>
                 <p class="text-indigo-600 font-medium">{{ $f['role'] }}</p>
                 <p class="text-gray-600">{{ $f['bio'] }}</p>
               </div>
@@ -123,7 +123,7 @@
                  alt="{{ $t['title'] }}"
                  class="w-full h-48 object-cover">
             <div class="p-6">
-              <h4 class="text-2xl font-semibold text-gray-800 mb-2">{{ $t['title'] }}</h4>
+              <h4 class="text-2xl font-semibold text-indigo-800 mb-2">{{ $t['title'] }}</h4>
               <p class="text-gray-600">{{ $t['desc'] }}</p>
             </div>
           </div>

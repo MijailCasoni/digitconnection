@@ -2,11 +2,11 @@
   <div class="flex justify-center mb-4 text-green-500 text-5xl">
     <i class="bi bi-whatsapp"></i>
   </div>
-  <h5 class="text-lg font-semibold mb-2">WhatsApp Profesional</h5>
+  <h5 class="text-lg font-semibold text-pink-600 mb-2">WhatsApp Profesional</h5>
   <p class="text-gray-600 leading-relaxed">
     Integración de botón fijo, enlaces directos, botón flotante y configuración avanzada para atención al cliente desde tu sitio web.
   </p>
-  <a href="#contacto" class="mt-4 inline-flex items-center justify-center px-5 py-2 border border-green-500 text-green-500 font-medium rounded-full hover:bg-green-500 hover:text-white transition duration-300">
+  <a href="#contacto" class="mt-4 inline-flex items-center justify-center px-5 py-2 border border-pink-500 text-pink-500 font-medium rounded-full hover:bg-pink-500 hover:text-white transition duration-300">
     Solicitar Integración
   </a>
 </div>

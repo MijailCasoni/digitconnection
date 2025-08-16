@@ -5,48 +5,48 @@
 
     <div class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset('img/backform.png') }}" alt="Decoración" class="w-full h-[1000px] object-cover opacity-50 mix-blend-multiply" />
+            <img src="{{ asset('img/backform.png') }}" alt="Decoración" class="w-full h-[1000px] object-cover opacity-70 mix-blend-multiply" />
         </div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             {{-- Aquí va el formulario --}}
-            <form action="{{ route('contact.submit') }}" method="POST" class="bg-white/20 backdrop-blur-md shadow-xl rounded-xl p-8 space-y-6">
+            <form action="{{ route('contact.submit') }}" method="POST" class="bg-white/50 backdrop-blur-md shadow-xl rounded-xl p-8 space-y-6">
                 @csrf
 
                 {{-- Encabezado emocional --}}
                 <div class="text-center">
-                    <h2 class="text-4xl font-extrabold text-gradient-blue-main mb-2">¿Listo para transformar tu visión?</h2>
-                    <p class="text-gray-700 text-lg leading-relaxed">Déjanos tus datos y te ayudaremos a convertir tus ideas en soluciones digitales de alto impacto.</p>
+                    <h2 class="text-4xl text-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">¿Listo para transformar tu visión?</h2>
+                    <p class="text-black-700 text-lg leading-relaxed">Déjanos tus datos y te ayudaremos a convertir tus ideas en soluciones digitales de alto impacto.</p>
                 </div>
 
                 {{-- Campos esenciales --}}
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                        <label for="name-bsn" class="block text-sm font-medium text-gray-700">Tu nombre</label>
+                        <label for="name-bsn" class="block text-sm font-medium text-black-900">Tu nombre</label>
                         <input type="text" name="name-bsn" id="name-bsn" required
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
+                            class="mt-1 block w-full rounded-md border-black-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
                             value="{{ old('name-bsn') }}">
                     </div>
 
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                        <label for="email" class="block text-sm font-medium text-black-700">Correo electrónico</label>
                         <input type="email" name="email" id="email" required
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
+                            class="mt-1 block w-full rounded-md border-black-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
                             value="{{ old('email') }}">
                     </div>
                 </div>
 
                 <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Número de contacto (WhatsApp)</label>
+                    <label for="phone" class="block text-sm font-medium text-black-700">Número de contacto (WhatsApp)</label>
                     <input type="tel" name="phone" id="phone" required
                         placeholder="+56 9 1234 5678"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
+                        class="mt-1 block w-full rounded-md border-black-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
                         value="{{ old('phone') }}">
                 </div>
 
                 <div>
-                    <label for="relationship" class="block text-sm font-medium text-gray-700">Tu rol en la empresa</label>
+                    <label for="relationship" class="block text-sm font-medium text-black-700">Tu rol en la empresa</label>
                     <select name="relationship" id="relationship" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main">
+                        class="mt-1 block w-full rounded-md text-gray-600 border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main">
                         <option value="" disabled selected>Selecciona una opción</option>
                         <option value="Dueño" {{ old('relationship') == 'Dueño' ? 'selected' : '' }}>Dueño</option>
                         <option value="Administrador" {{ old('relationship') == 'Administrador' ? 'selected' : '' }}>Administrador</option>
@@ -55,23 +55,23 @@
                 </div>
 
                 <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Nombre de tu empresa</label>
+                    <label for="name" class="block text-sm font-medium text-black-700">Nombre de tu empresa</label>
                     <input type="text" name="name" id="name" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
+                        class="mt-1 block w-full rounded-md border-black-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
                         value="{{ old('name') }}">
                 </div>
 
                 <div>
-                    <label for="domain" class="block text-sm font-medium text-gray-700">¿Ya tienes página web?</label>
+                    <label for="domain" class="block text-sm font-medium text-black-700">¿Ya tienes página web?</label>
                     <input type="text" name="domain" id="domain"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
+                        class="mt-1 block w-full rounded-md border-black-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main"
                         value="{{ old('domain') }}">
                 </div>
 
                 <div>
-                    <label for="site_type" class="block text-sm font-medium text-gray-700">¿Qué tipo de sitio necesitas?</label>
+                    <label for="site_type" class="block text-sm font-medium text-black-700">¿Qué tipo de sitio necesitas?</label>
                     <select name="site_type" id="site_type" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main">
+                        class="mt-1 block w-full rounded-md border-black-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main">
                         <option value="" disabled selected>Selecciona una opción</option>
                         <option value="landingpage">Landing Page</option>
                         <option value="Blog">Blog</option>
@@ -82,9 +82,9 @@
                 </div>
 
                 <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700">¿Qué necesitas lograr?</label>
+                    <label for="message" class="block text-sm font-medium text-black-700">¿Qué necesitas lograr?</label>
                     <textarea name="message" id="message" rows="4" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main">{{ old('message') }}</textarea>
+                        class="mt-1 block w-full rounded-md border-black-300 shadow-sm focus:ring-gradient-blue-main focus:border-gradient-blue-main">{{ old('message') }}</textarea>
                 </div>
 
                 {{-- CTA --}}
@@ -95,10 +95,10 @@
 
                 {{-- Redes sociales --}}
                 <div class="text-center pt-6">
-                    <p class="text-gray-600 mb-4">También puedes encontrarnos en nuestras redes sociales:</p>
+                    <p class="text-black-600 mb-4">También puedes encontrarnos en nuestras redes sociales:</p>
                     <div class="flex justify-center space-x-4 text-2xl">
-                        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#" class="text-pink-600 hover:text-pink-800"><i class="fab fa-instagram-square"></i></a>
+                        <a href="https://facebook.com/digitconnection" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://instagram.com/digit.connection" class="text-pink-600 hover:text-pink-800"><i class="fab fa-instagram-square"></i></a>
                     </div>
                 </div>
             </form>

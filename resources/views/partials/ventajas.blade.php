@@ -12,11 +12,11 @@
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       
       <!-- Card 1 -->
-      <div class="p-8 bg-white rounded-2xl shadow-md shadow-indigo-900/5 hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+      <div class="p-8 bg-white rounded-2xl shadow-md shadow-indigo-900/10 hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
         <div class="flex justify-center mb-4 text-indigo-600 text-5xl">
           <i class="bi bi-lightning-charge"></i>
         </div>
-        <h5 class="text-lg font-semibold mb-2">Desarrollo Ágil</h5>
+        <h5 class="text-lg font-semibold text-indigo-700 mb-2">Desarrollo Ágil</h5>
         <p class="text-gray-600 leading-relaxed">
           Tu proyecto en línea en tiempo récord, sin sacrificar calidad ni personalización.
         </p>
@@ -27,7 +27,7 @@
         <div class="flex justify-center mb-4 text-purple-600 text-5xl">
           <i class="bi bi-palette"></i>
         </div>
-        <h5 class="text-lg font-semibold mb-2">Diseño Estratégico</h5>
+        <h5 class="text-lg font-semibold text-purple-700 mb-2">Diseño Estratégico</h5>
         <p class="text-gray-600 leading-relaxed">
           Cada detalle visual está pensado para reflejar tu marca y convertir visitantes en clientes.
         </p>
@@ -38,7 +38,7 @@
         <div class="flex justify-center mb-4 text-pink-500 text-5xl">
           <i class="bi bi-shield-check"></i>
         </div>
-        <h5 class="text-lg font-semibold mb-2">Soporte y Seguridad</h5>
+        <h5 class="text-lg font-semibold text-pink-600 mb-2">Soporte y Seguridad</h5>
         <p class="text-gray-600 leading-relaxed">
           Acompañamiento técnico, hosting confiable y protección de tus datos desde el día uno.
         </p>

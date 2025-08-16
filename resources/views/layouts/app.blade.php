@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
     
     <!-- Scripts - ¡CRUCIAL! Asegúrate de que apunte a resources/css/app.css para Tailwind -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -22,7 +23,7 @@
         <!-- Aquí se incluye tu navbar. Asegúrate de que partials.navbar sea el que usa CLASES TAILWIND. -->
         @include('partials.navbar') <!--Asume que tu navbar está en resources/views/partials/navbar.blade.php-->
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>

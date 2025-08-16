@@ -1,23 +1,23 @@
 
-<footer class="footer-general text-sm w-full bg-blue-main"> {{-- 'footer-general' de footer.css, 'w-full' de Tailwind --}}
+<footer class="footer-general text-sm w-full bg-indigo-600"> {{-- 'footer-general' de footer.css, 'w-full' de Tailwind --}}
     <div class="footer-fluid py-5"> {{-- 'footer-fluid' de footer.css (ahora incluye max-w, mx-auto, px-4 de Tailwind) --}}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left justify-items-center md:justify-items-start">
             {{-- Columna 1: Logo + descripción --}}
             <div class="w-full md:col-span-1 mb-4 px-4 flex flex-col items-center md:items-start text-center md:text-left">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('storage/images/logo1.png') }}" alt="Logo Digit Connection" class="logo-footer mb-3 w-32 h-32">
+                    <img src="{{ asset('storage/images/logo1.png') }}" alt="Logo Digit Connection" class="logo-footer mb-3 w-40 h-40">
                 </a>
-                <p class="text-footer-text-dark leading-relaxed"> {{-- 'text-footer-text-dark' de footer.css --}}
+                <!--<p class="text-footer-text-dark leading-relaxed"> {{-- 'text-footer-text-dark' de footer.css --}}
                     <strong>DigitConnection</strong> crea soluciones digitales personalizadas para emprendedores, empresas y visionarios. Nos especializamos en sitios web, sistemas empresariales y branding digital.
-                </p>
+                </p>-->
             </div>
 
             {{-- Columna 2: Empresa + Producto --}}
             <div class="w-full md:col-span-1 mb-4 px-4">
                 <div class="flex flex-wrap gap-4 justify-around md:justify-start"> {{-- Tailwind para layout --}}
                     <div class="flex-1 min-w-[150px]"> {{-- Tailwind para columnas internas --}}
-                        <p class="titulo text-footer-dark-blue">Empresa</p> {{-- 'titulo' y 'text-footer-dark-blue' de footer.css --}}
-                        <ul class="ul-footer text-footer-text-dark"> {{-- 'ul-footer' de footer.css --}}
+                        <p class="text-md text-white">Empresa</p> {{-- 'titulo' y 'text-footer-dark-blue' de footer.css --}}
+                        <ul class="ul-footer text-black"> {{-- 'ul-footer' de footer.css --}}
                             <li><a href="https://digitconnection.com/contacto/" class="nav-link">Contacto</a></li>
                             <li><a href="https://digitconnection.com/programa-de-afiliados/" class="nav-link">Programa de afiliados</a></li>
                             <li><a href="https://digitconnection.com/opiniones/" class="nav-link">Opiniones</a></li>
@@ -25,8 +25,8 @@
                         </ul>
                     </div>
                     <div class="flex-1 min-w-[150px]"> {{-- Tailwind para columnas internas --}}
-                        <p class="titulo text-footer-dark-blue">Producto</p>
-                        <ul class="ul-footer text-footer-text-dark">
+                        <p class="text-md text-white">Producto</p>
+                        <ul class="ul-footer text-black">
                             <li><a href="https://digitconnection.com/productos/" class="nav-link">Productos</a></li>
                             <li><a href="https://digitconnection.com/productos/hosting" class="nav-link">Servicios de alojamiento</a></li>
                             <li><a href="https://digitconnection.com/serviciosplus" class="nav-link">Nuestros servicios</a></li>
@@ -39,26 +39,20 @@
 
             {{-- Columna 3: Contacto + redes sociales --}}
             <div class="w-full md:col-span-1 mb-4 px-4 text-center md:text-left">
-                <p class="titulo text-footer-dark-blue">Contáctanos</p>
-                <ul class="ul-footer text-footer-text-dark">
+                <p class="text-md text-white">Contáctanos</p>
+                <ul class="ul-footer text-black">
                     <li class="flex items-center justify-center md:justify-start"><i class="bi bi-envelope mr-2"></i> contacto@digitconnection.com</li>
                     <li class="flex items-center justify-center md:justify-start"><i class="bi bi-telephone mr-2"></i> +56 9 1234 5678</li>
                     <li class="flex items-center justify-center md:justify-start"><i class="bi bi-geo-alt mr-2"></i> Santiago, Chile</li>
                 </ul>
 
-                <p class="titulo mt-4 text-footer-dark-blue">Síguenos en redes</p>
+                <p class="titulo mt-4 text-white">Síguenos en redes</p>
                 <div class="social-icons flex justify-center md:justify-start space-x-4 mt-4 text-2xl"> {{-- 'social-icons' de footer.css --}}
-                    <a href="https://instagram.com/digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-dark-blue">
+                    <a href="https://instagram.com/digit.connection" target="_blank" class="text-footer-text-dark hover:text-footer-white">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://facebook.com/digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-dark-blue">
+                    <a href="https://facebook.com/digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-white">
                         <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://tiktok.com/@digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-dark-blue">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="https://x.com/digitconnection" target="_blank" class="text-footer-text-dark hover:text-footer-dark-blue">
-                        <i class="fab fa-x-twitter"></i>
                     </a>
                 </div>
             </div>

@@ -2,7 +2,7 @@
   <div class="flex justify-center mb-4 text-purple-600 text-5xl">
     <i class="bi bi-palette"></i>
   </div>
-  <h5 class="text-lg font-semibold mb-2">Branding Digital</h5>
+  <h5 class="text-lg font-semibold text-purple-700 mb-2">Branding Digital</h5>
   <p class="text-gray-600 leading-relaxed">
     Diseño visual estratégico que refleja tu identidad: tipografía personalizada, paleta de colores, gradientes y coherencia en cada detalle.
   </p>

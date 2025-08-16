@@ -42,6 +42,11 @@ class PageController extends Controller
             'descripcion' => 'Creamos plantillas personalizadas y escalables para distintos rubros, listas para implementar.',
             'icono' => 'bi bi-layout-text-window',
         ],
+        [
+            'titulo' => 'Branding',
+            'descripcion' => 'Creamos identidades visuales únicas y memorables que conectan con tu audiencia.',
+            'icono' => 'bi bi-layout-text-window',
+        ],
     ];
 
     return view('layouts.servicios', compact('servicios'));
