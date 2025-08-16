@@ -5,7 +5,7 @@
 
     <div class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset('img/backform.png') }}" alt="Decoración" class="w-full h-[1000px] object-cover opacity-70 mix-blend-multiply" />
+            <img src="{{ asset('img/backform.png') }}" alt="Decoración" class="w-full h-[1000px] object-cover opacity-50 mix-blend-multiply" />
         </div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             {{-- Aquí va el formulario --}}
@@ -99,7 +99,6 @@
                     <div class="flex justify-center space-x-4 text-2xl">
                         <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-square"></i></a>
                         <a href="#" class="text-pink-600 hover:text-pink-800"><i class="fab fa-instagram-square"></i></a>
-
                     </div>
                 </div>
             </form>

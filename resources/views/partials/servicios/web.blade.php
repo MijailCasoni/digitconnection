@@ -1,10 +1,12 @@
-<div class="col-md-6 col-lg-4 mb-4">
-  <div class="card h-100 shadow-sm border-0">
-    <div class="card-body text-center">
-      <i class="bi bi-window fs-1 text-primary mb-3"></i>
-      <h5 class="fw-bold">Landing Page Profesional</h5>
-      <p class="text-muted">Diseño modular con Blade, responsividad total, animaciones suaves y estructura pensada para convertir visitantes en clientes.</p>
-      <a href="#contacto" class="btn btn-outline-primary mt-2">Solicitar Landing</a>
-    </div>
+<div class="p-8 bg-gray-50 rounded-2xl shadow-md shadow-indigo-900/5 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 text-center">
+  <div class="flex justify-center mb-4 text-indigo-600 text-5xl">
+    <i class="bi bi-window"></i>
   </div>
+  <h5 class="text-lg font-semibold mb-2">Landing Page Profesional</h5>
+  <p class="text-gray-600 leading-relaxed">
+    Diseño modular con Blade, responsividad total, animaciones suaves y estructura pensada para convertir visitantes en clientes.
+  </p>
+  <a href="#contacto" class="mt-4 inline-flex items-center justify-center px-5 py-2 border border-indigo-600 text-indigo-600 font-medium rounded-full hover:bg-indigo-600 hover:text-white transition duration-300">
+    Contáctanos para más información
+  </a>
 </div>

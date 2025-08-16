@@ -1,43 +1,12 @@
-<section class="plantillas py-5 bg-white" id="plantillas">
-  <div class="container">
-    <h2 class="text-center fw-bold text-primary mb-5">Plantillas Disponibles</h2>
-
-    <div class="row">
-      {{-- Plantilla 1 --}}
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="{{ asset('img/plantilla1.jpg') }}" class="card-img-top" alt="Plantilla 1">
-          <div class="card-body">
-            <h5 class="fw-bold">Plantilla Clínica</h5>
-            <p class="text-muted">Navbar fijo, botón de WhatsApp, secciones modulares y diseño limpio.</p>
-            <a href="#" class="btn btn-outline-primary btn-sm">Solicitar</a>
-          </div>
-        </div>
-      </div>
-
-      {{-- Plantilla 2 --}}
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="{{ asset('img/plantilla2.jpg') }}" class="card-img-top" alt="Plantilla 2">
-          <div class="card-body">
-            <h5 class="fw-bold">Plantilla Agencia</h5>
-            <p class="text-muted">Animaciones suaves, tipografía personalizada y estructura Blade.</p>
-            <a href="#" class="btn btn-outline-primary btn-sm">Solicitar</a>
-          </div>
-        </div>
-      </div>
-      {{-- Plantilla 3 --}}
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="{{ asset('img/plantilla3.jpg') }}" class="card-img-top" alt="Plantilla 3">
-          <div class="card-body">
-            <h5 class="fw-bold">Plantilla Fábrica de muebles</h5>
-            <p class="text-muted">Diseño sobrio y elegante, ideal para mostrar catálogos de productos, procesos de fabricación y contacto directo. Incluye animaciones suaves, estructura modular Blade y branding adaptable al rubro industrial.
-</p>
-            <a href="#" class="btn btn-outline-primary btn-sm">Solicitar</a>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="p-8 bg-gray-50 rounded-2xl shadow-md shadow-indigo-900/5 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 text-center">
+  <div class="flex justify-center mb-4 text-pink-500 text-5xl">
+    <i class="bi bi-files"></i>
   </div>
-</section>
+  <h5 class="text-lg font-semibold mb-2">Plantillas Personalizadas</h5>
+  <p class="text-gray-600 leading-relaxed">
+    Diseños preconstruidos optimizados para rendimiento y conversión, adaptables a la identidad de tu marca.
+  </p>
+  <a href="#contacto" class="mt-4 inline-flex items-center justify-center px-5 py-2 border border-pink-500 text-pink-500 font-medium rounded-full hover:bg-pink-500 hover:text-white transition duration-300">
+    Solicitar Plantilla
+  </a>
+</div>

@@ -12,8 +12,8 @@
     <!-- Fonts - ¡Importante para las fuentes de Tailwind (Inter)! -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
-    {{-- Comenta o elimina si NO usas Nunito: <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- Scripts - ¡CRUCIAL! Asegúrate de que apunte a resources/css/app.css para Tailwind -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

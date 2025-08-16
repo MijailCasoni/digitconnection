@@ -61,7 +61,8 @@
         @endphp
 
         @foreach($values as $val)
-          <div class="p-8 rounded-xl bg-white shadow-lg hover:shadow-2xl transition relative overflow-hidden">
+          <div class="p-8 rounded-xl bg-white shadow-lg hover:shadow-[0_12px_40px_rgba(59,130,246,0.45)] 
+                      transition-all duration-300 relative overflow-hidden h-full flex flex-col transition relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-32 h-32 bg-amber-100 rounded-full opacity-50"></div>
             <img src="{{ asset("img/{$val['icon']}") }}"
                  alt="{{ $val['title'] }}"
@@ -91,8 +92,8 @@
           @endphp
 
           @foreach($founders as $f)
-            <div class="flex items-center bg-white rounded-xl shadow-lg p-6 hover:scale-105 transform transition">
-              <div class="w-24 h-24 flex-shrink-0 rounded-full overflow-hidden border-4 border-indigo-300 mr-6">
+            <div class="flex items-center bg-white rounded-xl shadow-lg p-6 hover:scale-105 hover:shadow-[0_12px_40px_rgba(59,130,246,0.45)]">
+              <div class="w-24 h-24 flex-shrink-0 rounded-full overflow-hidden border-4 border-indigo-300 mr-6 ">
                 <img src="{{ asset("img/{$f['img']}") }}" alt="{{ $f['name'] }}" class="object-cover w-full h-full">
               </div>
               <div>
@@ -117,7 +118,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         @foreach($teams as $t)
-          <div class="relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+          <div class="relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-[0_12px_40px_rgba(59,130,246,0.45)] transition">
             <img src="{{ asset("img/{$t['img']}") }}"
                  alt="{{ $t['title'] }}"
                  class="w-full h-48 object-cover">

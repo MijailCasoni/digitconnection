@@ -8,8 +8,8 @@
    importarlas aquí o directamente en tu <head> de layouts/app.blade.php.
    Por ejemplo:
 */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Sinfony&display=swap'); */ /* Si 'Sinfony' es una fuente web */
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Sinfony&display=swap'); /* Si 'Sinfony' es una fuente web *
 
 /* --------------------------------------------------------------------------------------
    Importación de tus Archivos CSS Personalizados:

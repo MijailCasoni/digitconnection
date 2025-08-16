@@ -1,10 +1,10 @@
-<nav class="bg-blue-main dark:bg-gray-800 shadow-md py-4 px-6 md:py-6 md:px-8 md:flex md:justify-between md:items-center">
+<nav class="bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 dark:bg-gray-800 shadow-md py-4 px-6 md:py-6 md:px-8 md:flex md:justify-between md:items-center">
     <div class="flex items-center justify-between">
         <!-- Logo de la Empresa -->
         <a href="{{ route('home') }}" class="flex items-center space-x-2">
             <!-- Asegúrate de reemplazar 'images/your-logo.png' con la ruta correcta de tu logo -->
-            <img src="{{ asset('storage/images/logo1.png') }}" alt="Logo de la Empresa" class="h-12 w-auto">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">DigitConnection</span>
+            <img src="{{ asset('storage/images/logo1.png') }}" alt="Logo de la Empresa" class="h-20 w-auto">
+            <span class="text-3xl font-logo text-gray-900 dark:text-white ">DigitConnection</span>
         </a>
         <!-- Botón de Hamburguesa para Móviles (si lo necesitas, lo puedes añadir aquí) -->
         <button id="navbar-toggle" class="md:hidden text-gray-500 dark:text-gray-400 focus:outline-none focus:text-gray-700 dark:focus:text-gray-200">
@@ -18,23 +18,23 @@
     <div id="navbarNav" class="hidden w-full md:flex md:items-center md:justify-end md:space-x-6">
         <ul class="flex flex-col md:flex-row md:space-x-4">
             <li class="nav-item">
-                <a class="block px-3 py-2 text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                <a class="block px-3 py-2  text-white dark:text-gray-200 rounded-md hover:bg-purple-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                    href="{{ route('home') }}">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="block px-3 py-2 text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                <a class="block px-3 py-2 text-white dark:text-gray-200 rounded-md hover:bg-purple-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                    href="{{ route('blog') }}">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="block px-3 py-2 text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                <a class="block px-3 py-2 text-white dark:text-gray-200 rounded-md hover:bg-purple-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                    href="{{ route('about') }}">Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="block px-3 py-2 text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                <a class="block px-3 py-2 text-white dark:text-gray-200 rounded-md hover:bg-purple-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                    href="{{ route('servicios') }}">Servicios</a>
             </li>
             <li class="nav-item">
-                <a class="block px-3 py-2 text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                <a class="block px-3 py-2 text-white dark:text-gray-200 rounded-md hover:bg-purple-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                    href="{{ route('contacto') }}">Contacto</a>
             </li>
         </ul>

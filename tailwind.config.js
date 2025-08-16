@@ -17,6 +17,7 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 inter: ['Inter', 'sans-serif'],
                 sinfony: ['Sinfony', 'sans-serif'],
+                
             },
             colors: {
                 'light-bg': '#d5e9fd',
