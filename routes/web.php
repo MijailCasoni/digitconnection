@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BlogController;
 
 
 /*
@@ -15,10 +16,33 @@ use App\Http\Controllers\ContactController;
 Route::get('/', [PageController::class, 'home'])->name('home');
 
 // Páginas informativas
-Route::get('/blog', [PageController::class, 'blog'])->name('blog');
+
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/servicios', [PageController::class, 'servicios'])->name('servicios');
 Route::get('/contacto', [PageController::class, 'contacto'])->name('contacto');
+Route::get('/proyectos', [PageController::class, 'proyectos'])->name('proyectos');
+Route::get('/afiliados', [PageController::class, 'afiliados'])->name('afiliados');
+Route::get('/templates', [PageController::class, 'templates'])->name('templates');
+Route::get('/politica-privacidad', [PageController::class, 'politicaPrivacidad'])->name('politica.privacidad');
+Route::get('/terminos-servicio', [PageController::class, 'terminosServicio'])->name('terminos.servicio');   
+Route::get('/cookies', [PageController::class, 'cookies'])->name('cookies');
+Route::get('/faq', [PageController::class, 'faq'])->name('faq');
+Route::get('/tecnologias', [PageController::class, 'tecnologias'])->name('tecnologias');
+Route::get('/trabaja-con-nosotros', [PageController::class, 'trabajaConNosotros'])->name('trabaja.con.nosotros');
+
+//ruta para cambios de idioma
+Route::get('lang/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'es', 'pt', 'it'])) {
+        abort(400);
+    }
+    Session::put('locale', $locale);
+    return redirect()->back();
+})->name('set-locale');
+
+// Rutas del Blog
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show'); // La ruta para una entrada específica
+
 
 // Formulario de contacto
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
@@ -30,8 +54,8 @@ Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('
 |--------------------------------------------------------------------------
 */
 
-// ¡DESCOMENTADO!: Esta línea registra todas las rutas de autenticación necesarias,
-// incluyendo 'password.request', 'password.email', etc.
+/*¡DESCOMENTADO!: Esta línea registra todas las rutas de autenticación necesarias,
+incluyendo 'password.request', 'password.email', etc.
 Auth::routes(['login' => false, 'register' => false, 'logout' => false, 'reset' => true, 'verify' => false]);
 
 // Tu ruta personalizada para mostrar el formulario de login (GET)
@@ -44,7 +68,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
 // Ruta para cerrar sesión
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
+*/
 
 /*
 |--------------------------------------------------------------------------

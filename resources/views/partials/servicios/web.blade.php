@@ -6,7 +6,7 @@
   <p class="text-gray-600 leading-relaxed">
     Diseño modular con Blade, responsividad total, animaciones suaves y estructura pensada para convertir visitantes en clientes.
   </p>
-  <a href="#contacto" class="mt-4 inline-flex items-center justify-center px-5 py-2 border border-indigo-600 text-indigo-600 font-medium rounded-full hover:bg-indigo-600 hover:text-white transition duration-300">
+  <a href="contacto" class="mt-4 inline-flex items-center justify-center px-5 py-2 border border-indigo-600 text-indigo-600 font-medium rounded-full hover:bg-indigo-600 hover:text-white transition duration-300">
     Contáctanos para más información
   </a>
 </div>

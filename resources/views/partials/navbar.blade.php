@@ -23,7 +23,7 @@
             </li>
             <li class="nav-item">
                 <a class="block px-3 py-2 text-white dark:text-gray-200 rounded-md hover:bg-purple-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                   href="{{ route('blog') }}">Blog</a>
+                   href="{{ route('blog.index') }}">Blog</a>
             </li>
             <li class="nav-item">
                 <a class="block px-3 py-2 text-white dark:text-gray-200 rounded-md hover:bg-purple-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -41,7 +41,7 @@
 
         <!-- Sección de Usuario/Login con Avatar -->
         <div class="flex items-center space-x-4 ml-auto md:ml-0">
-            <a href="{{ route('login') }}" class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">
+            
                 <!-- Avatar placeholder o icono de usuario -->
                 <div class="w-9 h-9 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center text-gray-600 dark:text-gray-300 text-sm font-semibold">
                     <!-- Puedes reemplazar esto con un icono SVG o una imagen de avatar real -->
@@ -58,6 +58,12 @@
                 </label>
                 <span class="text-gray-700 dark:text-gray-200">🌙</span>
             </div>
+            <ul class="flex space-x-4">
+    <li><a href="{{ route('set-locale', 'es') }}" class="text-white hover:text-gray-300">ES</a></li>
+    <li><a href="{{ route('set-locale', 'en') }}" class="text-white hover:text-gray-300">EN</a></li>
+    <li><a href="{{ route('set-locale', 'pt') }}" class="text-white hover:text-gray-300">PT</a></li>
+    <li><a href="{{ route('set-locale', 'it') }}" class="text-white hover:text-gray-300">IT</a></li>
+</ul>
         </div>
     </div>
 </nav>

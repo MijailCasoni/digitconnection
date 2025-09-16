@@ -12,7 +12,7 @@
             <form action="{{ route('contact.submit') }}" method="POST" class="bg-white/50 backdrop-blur-md shadow-xl rounded-xl p-8 space-y-6">
                 @csrf
 
-                {{-- Encabezado emocional --}}
+                {{-- Encabezado --}}
                 <div class="text-center">
                     <h2 class="text-4xl text-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">¿Listo para transformar tu visión?</h2>
                     <p class="text-black-700 text-lg leading-relaxed">Déjanos tus datos y te ayudaremos a convertir tus ideas en soluciones digitales de alto impacto.</p>

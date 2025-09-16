@@ -1,0 +1,32 @@
+.card-1{
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  background-color: aliceblue;
+  width: 100%;
+  height: auto;
+  text-align: justify;
+  margin: 5%;
+}
+
+body.dark-mode .card-1{
+  background-color: #5c27b6 !important;
+  color: #b0cbf0 !important;
+  
+}
+
+.card-2{
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  background-color: aliceblue;
+  width: 70%;
+  height: auto;
+  text-align: justify;
+  margin-top: 10em !important;
+}
+
+body.dark-mode .card-2{
+  background-color: #5c27b6 !important;
+  color: #b0cbf0 !important;
+  
+  
+}

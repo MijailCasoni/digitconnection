@@ -1,0 +1,26 @@
+.container-login{
+  margin-top:10%;
+  padding: 5%;
+  display: grid;
+  justify-content: left;
+  position: relative;
+  align-items: flex-start;
+}
+
+
+.login-form{
+  width: 100%;
+}
+
+form{
+  display: inline-flexbox;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto auto 100%;
+}
+
+.inputs{
+  width: 100% !important ;
+}
+
+

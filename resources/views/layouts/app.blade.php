@@ -8,7 +8,17 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'DigitConnection') }}</title>
+    <meta name="description" content="@yield('meta-description', config('app.name', 'DigitConnection') . ' - Conexión Digital para tu Negocio, Digital conection for you bussines. Diseño Web, web designe, SEO, Marketing Digital y más. digital Marketing and more')">
 
+    <meta name="keywords" content="@yield('meta-keywords', 'diseño web, desarrollo web, seo, marketing digital, blogs, tecnología, digitconnection, Digital conection for you bussines, web designe, digital Marketing and more. ')">
+
+    <link rel="canonical" href="@yield('canonical', url()->current())" />
+
+    <meta property="og:title" content="@yield('og-title', config('app.name', 'DigitConnection'))" />
+    <meta property="og:description" content="@yield('meta-description', config('app.name', 'DigitConnection') . ' - Conexión Digital para tu Negocio. Diseño Web, SEO, Marketing Digital y más, Digital Conection from you bussines, Digital Marketing and more')">
+    <meta property="og:url" content="@yield('og-url', url()->current())" />
+    <meta property="og:type" content="@yield('og-type', 'website')" />
+    <meta property="og:image" content="@yield('og-image', asset('storage/images/logo1.png'))" />
     <!-- Fonts - ¡Importante para las fuentes de Tailwind (Inter)! -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
@@ -28,6 +38,7 @@
         </main>
     </div>
     @include('partials.footer')
+    @include('partials.wpfloat') <!-- Botón flotante de WhatsApp -->
 
     <!-- SCRIPTS JAVASCRIPT: Coloca los scripts globales aquí, como el de dark mode si no está en app.js --}}-->
     <script>
@@ -60,6 +71,17 @@
                 console.error("Error: El elemento 'theme-toggle' no fue encontrado en el DOM de app.blade.php.");
             }
         });
+
+        
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('navbar-toggle');
+    const navMenu   = document.getElementById('navbarNav');
+
+    toggleBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+    });
+});
+
     </script>
     @stack('scripts') {{-- Para scripts específicos de cada vista --}}
 </body>

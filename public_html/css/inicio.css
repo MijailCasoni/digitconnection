@@ -1,0 +1,64 @@
+/* Estilo general para el carrusel */
+.carousel-item {
+    position: relative;
+    height: 80vh; /* Asegura que el carrusel ocupe toda la pantalla */
+    object-fit: cover; /* Las imágenes cubren toda la caja sin deformarse */
+    margin: 0 auto 0 auto ;
+    padding: 0; 
+}
+
+/* Estilo para las imágenes del carrusel */
+.carousel-inner .carousel-item img {
+    object-fit: cover; /* Hace que la imagen cubra el área sin distorsionarse */
+    height: 100%;
+    width: 100%;
+}
+
+/* Estilo para el texto del banner */
+.banner-text {
+    position: absolute;
+    top: 55%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+/* Estilo para el texto en el carrusel */
+.banner-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Agrega sombra para mejorar la legibilidad */
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.banner-text .btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: #007bff; /* Color primario */
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.banner-text .btn:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+body{
+    background-color: #bbcff7;
+}
+
+
+
+
+
+
